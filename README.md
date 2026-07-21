@@ -46,8 +46,11 @@ El proyecto contiene nueve pruebas automatizadas:
 ## Estructura del proyecto
 
 - `data.py`: contiene la URL del servidor y los datos de prueba.
-- `main.py`: contiene la clase `UrbanRoutesPage`, los localizadores, los métodos y las pruebas automatizadas.
+- `pages.py`: contiene la clase `UrbanRoutesPage`, los localizadores y los métodos de interacción con la aplicación.
+- `helpers.py`: contiene la función auxiliar `retrieve_phone_code()` para recuperar el código de confirmación.
+- `main.py`: contiene la clase `TestUrbanRoutes`, los escenarios automatizados y sus validaciones.
 - `README.md`: contiene la documentación del proyecto.
+- `README.en.md`: contiene la documentación del proyecto en inglés.
 
 ## Requisitos
 

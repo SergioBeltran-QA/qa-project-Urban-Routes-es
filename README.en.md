@@ -48,7 +48,9 @@ The project contains nine automated tests:
 ## Project Structure
 
 - `data.py`: contains the server URL and test data.
-- `main.py`: contains the `UrbanRoutesPage` class, locators, methods, and automated tests.
+- `pages.py`: contains the `UrbanRoutesPage` class, page locators, and interaction methods.
+- `helpers.py`: contains the `retrieve_phone_code()` helper used to obtain the confirmation code.
+- `main.py`: contains the `TestUrbanRoutes` class, automated scenarios, and assertions.
 - `README.md`: Spanish project documentation.
 - `README.en.md`: English project documentation.
 
