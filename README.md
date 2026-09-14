@@ -1,16 +1,18 @@
-# Proyecto Urban Routes — Pruebas automatizadas
+[English version](README.en.md)
+
+# Urban Routes — Automatización de pruebas web
+
+Proyecto de automatización end-to-end desarrollado durante el programa de QA Engineer de TripleTen.
 
 ## Descripción
 
-Este proyecto automatiza el flujo completo para solicitar un taxi en la aplicación web Urban Routes.
+Este proyecto automatiza el flujo completo para solicitar un taxi en la aplicación web Urban Routes. La suite valida desde la configuración de la ruta hasta la aparición de la información del conductor, utilizando una estructura basada en Page Object Model.
 
-Las pruebas comprueban la configuración de una ruta, la selección de la tarifa Comfort, el registro del teléfono, la incorporación de un método de pago y la configuración de requisitos adicionales para el viaje.
+## Resultado
 
-El proyecto fue desarrollado como parte del Sprint 9 del programa de QA Engineer de TripleTen.
+**9 pruebas automatizadas aprobadas**, incluido el escenario opcional de información del conductor.
 
 ## Escenarios automatizados
-
-El proyecto contiene nueve pruebas automatizadas:
 
 1. Configurar las direcciones de origen y destino.
 2. Seleccionar la tarifa Comfort.
@@ -22,7 +24,20 @@ El proyecto contiene nueve pruebas automatizadas:
 8. Comprobar que aparece el modal de búsqueda de taxi.
 9. Esperar a que aparezca la información del conductor.
 
-## Tecnologías utilizadas
+## Competencias de QA demostradas
+
+- Automatización de pruebas end-to-end
+- Page Object Model
+- Diseño de escenarios funcionales
+- Localizadores CSS, XPath, ID y nombre de clase
+- Esperas explícitas
+- Validaciones con assertions
+- Métodos reutilizables
+- Interacción con formularios, modales, interruptores y contadores
+- Recuperación del código SMS mediante registros de rendimiento
+- Control de versiones con Git y GitHub
+
+## Tecnologías
 
 - Python
 - Selenium WebDriver
@@ -32,89 +47,57 @@ El proyecto contiene nueve pruebas automatizadas:
 - Git y GitHub
 - PyCharm
 
-## Técnicas utilizadas
-
-- Page Object Model (POM) para separar los localizadores, las acciones de la página y las pruebas.
-- Localizadores CSS, XPath, ID y nombre de clase.
-- Esperas explícitas con `WebDriverWait` y `expected_conditions`.
-- Interacción con campos, botones, interruptores y contadores.
-- Uso de `Keys.TAB` para cambiar el enfoque del campo CVV.
-- Recuperación del código SMS mediante los registros de rendimiento del navegador.
-- Validaciones con sentencias `assert`.
-- Automatización de un flujo end-to-end.
-
 ## Estructura del proyecto
 
-- `data.py`: contiene la URL del servidor y los datos de prueba.
-- `pages.py`: contiene la clase `UrbanRoutesPage`, los localizadores y los métodos de interacción con la aplicación.
-- `helpers.py`: contiene la función auxiliar `retrieve_phone_code()` para recuperar el código de confirmación.
-- `main.py`: contiene la clase `TestUrbanRoutes`, los escenarios automatizados y sus validaciones.
-- `README.md`: contiene la documentación del proyecto.
-- `README.en.md`: contiene la documentación del proyecto en inglés.
-
-## Requisitos
-
-Antes de ejecutar las pruebas, es necesario tener instalado:
-
-- Python 3
-- Google Chrome
-- Una versión de ChromeDriver compatible con Google Chrome
-- Selenium 4.9.1
-- pytest
-
-ChromeDriver debe estar disponible en la variable de entorno `PATH`.
+- `data.py` — URL del servidor y datos de prueba
+- `pages.py` — clase `UrbanRoutesPage`, localizadores y métodos de interacción
+- `helpers.py` — función `retrieve_phone_code()`
+- `main.py` — clase `TestUrbanRoutes`, escenarios y validaciones
+- `README.md` — documentación en español
+- `README.en.md` — documentación en inglés
 
 ## Instalación
 
-Clona el repositorio:
-
 ```bash
-git clone git@github.com:SergioBeltran-QA/qa-project-Urban-Routes-es.git
-```
-
-Accede al directorio del proyecto:
-
-```bash
+git clone https://github.com/SergioBeltran-QA/qa-project-Urban-Routes-es.git
 cd qa-project-Urban-Routes-es
-```
-
-Crea y activa un entorno virtual:
-
-```bash
 python -m venv .venv
 source .venv/bin/activate
-```
-
-Instala las dependencias:
-
-```bash
 python -m pip install selenium==4.9.1 pytest
 ```
 
+ChromeDriver debe ser compatible con la versión instalada de Google Chrome y estar disponible en la variable de entorno `PATH`.
+
 ## Configuración del servidor
 
-Inicia el servidor de Urban Routes desde la plataforma de TripleTen.
-
-Copia la URL completa, incluyendo `?lng=es`, y reemplaza el valor de `urban_routes_url` en `data.py`.
-
-Ejemplo:
+Inicia el servidor de Urban Routes desde la plataforma de TripleTen. Copia la URL completa, incluido `?lng=es`, y sustituye el valor de `urban_routes_url` en `data.py`:
 
 ```python
-urban_routes_url = 'URL_DEL_SERVIDOR?lng=es'
+urban_routes_url = "SERVER_URL?lng=es"
 ```
 
-La URL del servidor es temporal y debe actualizarse cuando expire.
+La URL de prueba es temporal y debe actualizarse cuando expire.
 
-## Ejecución de las pruebas
-
-Ejecuta todas las pruebas con:
+## Ejecución
 
 ```bash
 python -m pytest main.py -v
 ```
 
-El resultado esperado es:
+Resultado esperado:
 
 ```text
 9 passed
 ```
+
+## Datos de prueba
+
+Los nombres, teléfonos, direcciones y datos de pago incluidos en el repositorio son valores ficticios utilizados exclusivamente para pruebas.
+
+## Autor
+
+**Sergio Beltrán**  
+Junior QA Engineer especializado en pruebas web, móviles, API y bases de datos.
+
+- [GitHub](https://github.com/SergioBeltran-QA)
+- [LinkedIn](https://www.linkedin.com/in/sergio-beltr%C3%A1n-/)
